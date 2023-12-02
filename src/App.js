@@ -1,10 +1,15 @@
-
-function App() { 
+import "./App.css";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Routing from "./components/Routing";
+function App() {
   return (
-    <div>
-      <h1>Little Lemon</h1>
-    </div>
+    <>
+    <Navbar/>
+    <Routing/>
+    <Footer/>
+    </>
   );
-} 
- 
-export default App; 
+}
+
+export default App;

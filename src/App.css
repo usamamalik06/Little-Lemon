@@ -1,23 +1,187 @@
 * {
-    font-family: sans-serif;
-  }
-  input,
-  button {
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  input {
-    display: block;
-    margin-bottom: 20px;
-  }
-  button {
-    border: 1px solid gray;
-    background: whitesmoke;
-    margin-right: 5px;
-  }
-  button:nth-last-child(2),
-  button:nth-last-child(1) {
-    background: tomato;
-    color: white;
-  }
+  font-family: "Markazi Text", "Karla", serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  margin-top: -22px;
+}
+menu{
+  display: grid;
+  list-style: none;
+}
+.burger-icon{
+  margin-top: 1.5rem;
+}
+.action-button{
+  background-color: #f4ce14;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  font-family: "Karla";
+  font-size: 1rem;
+  text-decoration: none;
+}
+.action-button:hover{
+  background-color: #495e57;
+  color: #eee;
+  border: solid 1px #edefee;
+  transition: 0.2s;
+}
+.sub-section{
+  margin-top: -1rem;
+}
+
+/* NAVBAR STYLING */
+.navbar-menu{
+  grid-template-columns: repeat(7,1fr);
+  align-items: center;
+}
+.navbar-menu > li,
+.navbar-menu > a,
+.navbar-menu > Link{
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: rgba(12, 86, 12, 0.896);
+  text-decoration: none;
+}
+.mobile{
+  display: none;
+}
+.nav-image{
+  max-height: 4rem;
+  margin-top: 0.7rem;
+  margin-left: -1.25rem;
+}
+.burger{
+  display: none;
+  grid-template-columns: 5fr 1fr;
+}
+.hover-effect:hover{
+  color: #f4ce14;
+  transition: 0.25s;
+}
+
+/* CALL TO ACTION */
+.call-to-action{
+  background-color: #495e57;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1.25rem 5rem 1.2rem 5rem;
+  margin-top: -1.3rem;
+}
+
+.hero-text > h1{
+  font-size: 3rem;
+  margin-top: 0rem;
+  margin-bottom: -1rem;
+}
+.hero-text > h2{
+  font-size: 2.3rem;
+  margin-top: 1rem;
+}
+.hero-image{
+  max-height: 17rem;
+  padding-left: 2rem;
+}
+.hero-image > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SPECIALS */
+.specials{
+  padding: 2rem 5rem 0 5rem;
+}
+.specials-topbar{
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.specials-topbar > h1{
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.specials-cards{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2vw;
+}
+.menu-card{
+  background-color: #edefee;
+  padding-bottom: 1rem;
+}
+.menu-card > img{
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+}
+.menu-card-content{
+  margin: 0.5rem 2rem 1rem 2rem;
+}
+.menu-card-content > h1{
+  font-size: 1.5rem;
+  margin: 0;
+}
+.menu-card-content > h3{
+  font-size: 1rem;
+  margin: 0;
+}
+/* RESERVE A TABLE */
+.header-reserve{
+  width: 100vw;
+  height: 20rem;
+  object-fit: cover;
+}
+
+/* FOOTER STYLING */
+footer{
+  background-color: #495e57;
+  min-height: 13rem;
+  color: #fff;
+  margin-top: -1.4rem;
+  padding-bottom: 1rem;
+}
+footer > menu{
+  grid-template-columns: repeat(4,1fr);
+}
+.footer-header{
+  margin-bottom: -1.25rem;
+}
+.footer-links{
+  padding: 0;
+  list-style: none;
+}
+.footer-links > a,
+.footer-links > Link,
+.footer-links > li{
+  display: block;
+  text-align: left;
+  padding-top: 0.2rem;
+  color: white;
+  font-family: "Karla", "Sans Serif";
+}
+
+.footer-links > a:hover,
+.footer-links > Link:hover{
+  text-decoration: none;
+  color: #f4ce14;
+}
+.img-footer{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+}
+.img-footer > img{
+  max-height: 8rem;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-right: 3rem;
+  background-color: white;
+  padding: 0.5rem;
+}
