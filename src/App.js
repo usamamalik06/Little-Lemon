@@ -7,7 +7,7 @@ function App() {
     <>
     <Navbar/>
     <Routing/>
-    <Footergit/>
+    <Footer/>
     </>
   );
 }
