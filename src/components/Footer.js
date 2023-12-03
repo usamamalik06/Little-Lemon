@@ -27,7 +27,8 @@ export default function Footer(){
                         <br></br>
                         <li>(629)-243-6827</li>
                         <br></br>
-                        <a href="mailto: info@littlelemon.com" target="_blank" rel="noreferr">info@littlelemon.com</a>
+                        <a href="mailto:info@littlelemon.com" target="_blank" rel="noreferrer">info@littlelemon.com</a>
+
                     </ul>
                 </li>
                 <li>
