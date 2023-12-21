@@ -14,7 +14,7 @@ export default function ReservationForm(props){
     const [comments, setComments] = useState("");
 
     const [showError, setShowError] = useState(false);
-    const [formValid,setFormValid] = useState(false);
+    const [formValid,setFormValid] = useState(false); // eslint-disable-line no-unused-vars
 
     const [finalTime, setFinalTime] = useState(props.availableTimes.map((times)=> <option>{times}</option>));
 
