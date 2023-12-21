@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ReservationForm(props){
+    const navigate = useNavigate();
     const [fName, setFName] = useState("");
     const [lName, setLName] = useState("");
     const [email, setEmail] = useState("");
@@ -12,6 +13,9 @@ export default function ReservationForm(props){
     const [preferences, setPreferences] = useState("");
     const [comments, setComments] = useState("");
 
+    const [showError, setShowError] = useState(false);
+    const [formValid,setFormValid] = useState(false);
+
     const [finalTime, setFinalTime] = useState(props.availableTimes.map((times)=> <option>{times}</option>));
 
     function handleDateChange(e){
@@ -19,8 +23,38 @@ export default function ReservationForm(props){
         var stringify = e.target.value;
         const date = new Date(stringify);
         props.updateTimes(date);
+           // Update form validation based on your validation logic
+        const isFormValid = validateForm(); // Implement your validation logic
+         setFormValid(isFormValid);
+
         setFinalTime(props.availableTimes.map((times)=> <option>{times}</option>));
     }
+    function validateForm() {
+        // Implement your validation logic here
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^\d{11}$/;
+        // Check if all required fields are filled
+        return fName.trim() !== "" &&
+           lName.trim() !== "" &&
+           email.trim() !== "" &&
+           emailRegex.test(email) && // Validate email format
+           tel.trim() !== "" &&
+           phoneRegex.test(tel) &&   // Validate phone number format
+           people !== "" &&
+           date !== "" &&
+           finalTime.length > 0;
+      }
+      const isFormValid = validateForm();
+      function handleBookTableClick() {
+        if (isFormValid) {
+          // Redirect to the confirmation page
+          navigate("/confirmation");
+        } else {
+          // Show error message
+          setShowError(true);
+        }
+      }
+
     return(
         <form className="reservation-form">
             <div>
@@ -87,7 +121,14 @@ export default function ReservationForm(props){
                         double-check your answer before submitting your reservation request.
                     </p>
                 </small>
-                <Link className="action-button" to="/confirmation">Book Table</Link>
+                {/* "Book Table" button always visible */}
+        <button className="action-button" onClick={handleBookTableClick}>
+          Book Table
+        </button>
+        {/* Error message shown if the form is not valid */}
+        {showError && (
+          <p className="error-message">Please fill in all required fields.</p>
+        )}
             </div>
 
         </form>
